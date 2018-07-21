@@ -5,8 +5,14 @@
     "dependencies": {
         "bootstrap": "^3.3.7",
         "custom-react-scripts": "0.2.1",
-        "react": "^16.1.1",
-        "react-dom": "^16.1.1"
+        "dateformat": "^3.0.3",
+        "flexboxgrid-sass": "^8.0.5",
+        "jquery": "^3.3.1",
+        "react": "^16.4.1",
+        "react-dom": "^16.4.1",
+        "react-flexbox-grid": "^2.1.2",
+        "react-grid-system": "^4.1.4",
+        "reactstrap": "^6.3.0"
     },
     "scripts": {
         "start": "react-scripts start",

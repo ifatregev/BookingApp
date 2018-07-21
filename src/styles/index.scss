@@ -1,15 +1,132 @@
 @import "vars";
 @import "fonts";
+@import "mixins";
+
 
 html, body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @include font-smoothing(); 
 }
 
 body {
     margin: 0;
+    padding: 0;
     background-color: $color-dark;
     color: $color-steel-grey;
-    font-family: 'Lato', sans-serif;
-    font-size: 14px;
+    @include font-style(30px);
+}
+
+.hotel-report-grid {
+    line-height: 30px;
+    text-align: left;
+}
+
+.hotel-report {
+    width: 100%;
+    height: 29px;
+    color: $color-white;
+    @include font-style(24px);
+    display: flex;
+    flex-direction: column;
+    &:after {
+        content: "";
+        padding-top: 80px;
+        border-bottom: 1px solid $color-grey;
+        position: absolute;
+        @include area-size(3px, 90%);
+    }
+}
+
+.hotel-report .status-subtitle{
+    color: $color-steel-grey;
+    line-height: 15px;
+    @include font-style(12px);   
+}
+
+.employee-stats{
+    margin: 65px 0px 0px 10px;
+    text-align: left;
+    color: $color-white;
+    clear: both;
+    display: flex;
+    flex-direction: column;
+}
+
+.employee-stats .sub-header {
+    @include font-style(17px);
+}
+
+.top-sellers-grid{
+    margin: 30px 0px 0px 0px;
+}
+
+.top-employee {
+    line-height: 33px;
+    @include font-style(12px);
+}
+
+.employee-img img{
+    border-radius: 50%;
+    @include area-size(33px, 33px);
+}
+
+.employee-img, .employee-name, .employee-sumHours{
+    margin: 10px 0px 0px 0px;
+}
+
+.employee-sumHours{
+    color: $color-steel-grey;
+    margin: 10px 0px 0px 20px;
+}
+
+@media only screen and (max-width: 768px){
+    .page-content {
+        width: 768px;
+        padding: 0px;
+    }
+
+    .employee-stats{
+        margin: 80px 0px 0px 0px;
+    }
+
+    .employee-name, .employee-sumHours{
+        margin: 10px 0px 0px -20px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+
+    .page-content {
+        width: 500px;
+    }
+
+    .hotel-report-grid {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hotel-report {
+        display: flex;
+        flex-direction: row;
+        padding: 0px 0px 0px 70px;
+        @include area-size(205px, 100%);
+        &:after {
+            padding: 220px 0px 0px 0px;
+            @include area-size(3px, 40%);
+        }
+    }
+
+    .employee-stats{
+        margin: 65px 0px 0px 10px;
+        text-align: center;
+    }
+
+    .employee-name, .employee-sumHours{
+        margin: 10px 0px 0px 0px;
+    }
+
+}
+
+.loading-page {
+    width: 100%;
+    margin: 100px 0px 0px 0px;
 }

@@ -1,0 +1,14 @@
+@mixin font-smoothing() {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin font-style($font-size) {
+    font-family: $font-page;
+    font-size: $font-size;
+}
+
+@mixin area-size($height, $width) {
+    height: $height;
+    width: $width;
+}
